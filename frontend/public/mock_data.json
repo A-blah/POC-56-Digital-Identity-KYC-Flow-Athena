@@ -1,0 +1,2652 @@
+[
+  {
+    "applicant_id": "ID-45734",
+    "timestamp": "2026-06-02T16:53:07.147835",
+    "full_name": "Vladimir Petrov",
+    "country": "Russia",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-9921X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "OFAC SDN critical match (\u00e2\u2030\u00a585% confidence)",
+    "risk_score": 0.98,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "OB consent handshake completed. Token: OB-CONSENT-9921X."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via MRZ OCR. Checksum intact."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Facial liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Fuzzy hit at 98% confidence on OFAC SDN Entity OFAC-SDN-10412."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed enforced \u00e2\u20ac\u201d critical sanctions hit."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Application rejected. Regulatory notification filed."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.98,
+      "watchlist_entity_id": "OFAC-SDN-10412"
+    }
+  },
+  {
+    "applicant_id": "ID-45678",
+    "timestamp": "2026-06-02T15:39:07.147913",
+    "full_name": "Amelia Smith",
+    "country": "United Kingdom",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-4421X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.04,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "OB consent handshake completed. Token: OB-CONSENT-4421X."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated. MRZ checksum confirmed."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed. No spoofing indicators."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No OFAC, EU, or UN sanctions list matches found."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Platform access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.02,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-98765",
+    "timestamp": "2026-06-02T13:56:07.147946",
+    "full_name": "Marcus Johnson",
+    "country": "Russia",
+    "document_type": "National ID Card",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-1123Y",
+    "document_status": "Failed",
+    "biometric_status": "Verified",
+    "sanctions_match": "Potential Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "Document expired; Jurisdiction on FATF high-risk list",
+    "risk_score": 0.89,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Synthetic DB ingestion. Token: OB-CONSENT-1123Y."
+      },
+      {
+        "step": "Document Check",
+        "status": "FAILED",
+        "msg": "National ID expired 14 months ago. MRZ checksum mismatch."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed despite document failure."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "PENDING",
+        "msg": "Potential watchlist proximity match \u00e2\u20ac\u201d secondary screening initiated."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Multi-axis failure: expired document + potential sanctions exposure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Application rejected."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.76,
+      "watchlist_entity_id": "OFAC-SDN-8821"
+    }
+  },
+  {
+    "applicant_id": "ID-45771",
+    "timestamp": "2026-06-02T11:20:07.147972",
+    "full_name": "Fatima Al-Rashid",
+    "country": "Iran",
+    "document_type": "Passport",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-6632A",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "OFAC SDN critical match (\u00e2\u2030\u00a585% confidence)",
+    "risk_score": 0.94,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Synthetic DB ingestion. Token: OB-CONSENT-6632A."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated. MRZ checksum intact."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Critical OFAC SDN match at 92% confidence. Entity: OFAC-SDN-9912."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed \u00e2\u20ac\u201d jurisdiction Iran is sanctioned."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Application rejected. Notification filed."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.92,
+      "watchlist_entity_id": "OFAC-SDN-9912"
+    }
+  },
+  {
+    "applicant_id": "ID-77102",
+    "timestamp": "2026-06-02T10:01:07.147996",
+    "full_name": "Sophie Andersen",
+    "country": "Germany",
+    "document_type": "National ID Card",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-7812B",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.07,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "OB consent handshake completed. Token: OB-CONSENT-7812B."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "National ID validated. MRZ integrity confirmed."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Facial liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No OFAC, EU, or UN list matches."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All rules satisfied. Clean profile."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.03,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-48654",
+    "timestamp": "2026-05-12T21:15:07.148100",
+    "full_name": "Charlotte Kowalski",
+    "country": "Netherlands",
+    "document_type": "National ID Card",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-13639X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.12,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "National ID Card validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.07,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-52923",
+    "timestamp": "2026-06-01T23:31:07.148155",
+    "full_name": "Elena Andersen",
+    "country": "Somalia",
+    "document_type": "Driver Licence",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-53021X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Potential Match",
+    "overall_status": "Pending Review",
+    "reason_if_failed": "Secondary Review Required",
+    "risk_score": 0.51,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Driver Licence validated."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "PENDING",
+        "msg": "Proximity match detected. Manual review required."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "PENDING",
+        "msg": "Escalated to compliance officer queue."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "PENDING",
+        "msg": "Pending sign-off."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.49,
+      "watchlist_entity_id": "OFAC-SDN-8576"
+    }
+  },
+  {
+    "applicant_id": "ID-45094",
+    "timestamp": "2026-05-03T19:39:07.148193",
+    "full_name": "Fatima Zhang",
+    "country": "Norway",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-62404X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.15,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.04,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-48940",
+    "timestamp": "2026-05-13T18:12:07.148218",
+    "full_name": "Wei Johansson",
+    "country": "Netherlands",
+    "document_type": "Residence Permit",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-81801X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.03,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Residence Permit validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.08,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-47913",
+    "timestamp": "2026-05-11T13:56:07.148257",
+    "full_name": "Omar van der Berg",
+    "country": "Syria",
+    "document_type": "Residence Permit",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-32041X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "Invalid date of birth vs. registry record",
+    "risk_score": 0.82,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Residence Permit status: Verified."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Watchlist evaluation: Critical Match. Conf: 88%."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed due to sanctions or document failure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Rejected: Invalid date of birth vs. registry record."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.88,
+      "watchlist_entity_id": "OFAC-SDN-7500"
+    }
+  },
+  {
+    "applicant_id": "ID-53088",
+    "timestamp": "2026-05-19T01:10:07.148282",
+    "full_name": "Lucas Thompson",
+    "country": "Netherlands",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-29519X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.11,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.1,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-47308",
+    "timestamp": "2026-05-08T16:46:07.148304",
+    "full_name": "Elena Petrov",
+    "country": "Germany",
+    "document_type": "Passport",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-46268X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.19,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.07,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-53595",
+    "timestamp": "2026-05-24T19:52:07.148339",
+    "full_name": "Ivan Andersen",
+    "country": "Russia",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-99307X",
+    "document_status": "Failed",
+    "biometric_status": "Verified",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "Biometric mismatch \u00e2\u20ac\u201d liveness check failed",
+    "risk_score": 0.71,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "FAILED",
+        "msg": "Passport status: Failed."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Watchlist evaluation: Critical Match. Conf: 87%."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed due to sanctions or document failure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Rejected: Biometric mismatch \u00e2\u20ac\u201d liveness check failed."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.87,
+      "watchlist_entity_id": "OFAC-SDN-6521"
+    }
+  },
+  {
+    "applicant_id": "ID-48414",
+    "timestamp": "2026-05-15T11:05:07.148361",
+    "full_name": "Daniel Petrov",
+    "country": "Norway",
+    "document_type": "Residence Permit",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-81275X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.17,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Residence Permit validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.09,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-53431",
+    "timestamp": "2026-06-02T07:14:07.148385",
+    "full_name": "Mohammed Thompson",
+    "country": "Venezuela",
+    "document_type": "Driver Licence",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-75470X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Potential Match",
+    "overall_status": "Pending Review",
+    "reason_if_failed": "Secondary Review Required",
+    "risk_score": 0.63,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Driver Licence validated."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "PENDING",
+        "msg": "Proximity match detected. Manual review required."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "PENDING",
+        "msg": "Escalated to compliance officer queue."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "PENDING",
+        "msg": "Pending sign-off."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.51,
+      "watchlist_entity_id": "OFAC-SDN-5706"
+    }
+  },
+  {
+    "applicant_id": "ID-49784",
+    "timestamp": "2026-05-10T17:06:07.148405",
+    "full_name": "Ethan Thompson",
+    "country": "United Kingdom",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-74687X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.07,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.04,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-48392",
+    "timestamp": "2026-05-12T09:38:07.148436",
+    "full_name": "Charlotte Sharma",
+    "country": "Syria",
+    "document_type": "Passport",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-79638X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "Invalid date of birth vs. registry record",
+    "risk_score": 0.83,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport status: Verified."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Watchlist evaluation: Critical Match. Conf: 92%."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed due to sanctions or document failure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Rejected: Invalid date of birth vs. registry record."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.92,
+      "watchlist_entity_id": "OFAC-SDN-9331"
+    }
+  },
+  {
+    "applicant_id": "ID-48198",
+    "timestamp": "2026-05-13T15:24:07.148463",
+    "full_name": "Ivan Martinez",
+    "country": "Myanmar",
+    "document_type": "Driver Licence",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-26348X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "Biometric mismatch \u00e2\u20ac\u201d liveness check failed",
+    "risk_score": 0.78,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Driver Licence status: Verified."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Watchlist evaluation: Critical Match. Conf: 97%."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed due to sanctions or document failure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Rejected: Biometric mismatch \u00e2\u20ac\u201d liveness check failed."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.97,
+      "watchlist_entity_id": "OFAC-SDN-5370"
+    }
+  },
+  {
+    "applicant_id": "ID-46353",
+    "timestamp": "2026-06-01T05:22:07.148486",
+    "full_name": "Charlotte M\u00c3\u00bcller",
+    "country": "Switzerland",
+    "document_type": "National ID Card",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-25383X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.05,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "National ID Card validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.06,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-45935",
+    "timestamp": "2026-05-21T06:42:07.148510",
+    "full_name": "Charlotte M\u00c3\u00bcller",
+    "country": "Norway",
+    "document_type": "Driver Licence",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-29138X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.1,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Driver Licence validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.1,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-53782",
+    "timestamp": "2026-05-06T02:26:07.148530",
+    "full_name": "Aisha Johansson",
+    "country": "Norway",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-34617X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.15,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.11,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-45115",
+    "timestamp": "2026-05-04T02:55:07.148553",
+    "full_name": "Lucas Ferreira",
+    "country": "Germany",
+    "document_type": "Passport",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-23949X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.05,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.1,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-45778",
+    "timestamp": "2026-06-01T04:51:07.148579",
+    "full_name": "Amara M\u00c3\u00bcller",
+    "country": "Myanmar",
+    "document_type": "Residence Permit",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-15991X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "Document expired",
+    "risk_score": 0.85,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Residence Permit status: Verified."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Watchlist evaluation: Critical Match. Conf: 97%."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed due to sanctions or document failure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Rejected: Document expired."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.97,
+      "watchlist_entity_id": "OFAC-SDN-7144"
+    }
+  },
+  {
+    "applicant_id": "ID-45777",
+    "timestamp": "2026-05-26T03:43:07.148599",
+    "full_name": "Isabella Nguyen",
+    "country": "Norway",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-67522X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.14,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.07,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-49570",
+    "timestamp": "2026-05-09T05:58:07.148620",
+    "full_name": "Marcus Kowalski",
+    "country": "Sweden",
+    "document_type": "Passport",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-70257X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.18,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.04,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-49582",
+    "timestamp": "2026-05-25T05:34:07.148640",
+    "full_name": "Aisha Thompson",
+    "country": "Norway",
+    "document_type": "Driver Licence",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-79666X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.07,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Driver Licence validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.11,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-51256",
+    "timestamp": "2026-05-06T06:48:07.148661",
+    "full_name": "Omar Nguyen",
+    "country": "Netherlands",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-28151X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.18,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.04,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-50040",
+    "timestamp": "2026-05-15T09:41:07.148683",
+    "full_name": "Omar Williams",
+    "country": "United States",
+    "document_type": "National ID Card",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-39666X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Potential Match",
+    "overall_status": "Pending Review",
+    "reason_if_failed": "Secondary Review Required",
+    "risk_score": 0.4,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "National ID Card validated."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "PENDING",
+        "msg": "Proximity match detected. Manual review required."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "PENDING",
+        "msg": "Escalated to compliance officer queue."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "PENDING",
+        "msg": "Pending sign-off."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.59,
+      "watchlist_entity_id": "OFAC-SDN-6683"
+    }
+  },
+  {
+    "applicant_id": "ID-45643",
+    "timestamp": "2026-05-18T15:36:07.148710",
+    "full_name": "Elena Williams",
+    "country": "Syria",
+    "document_type": "National ID Card",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-98301X",
+    "document_status": "Failed",
+    "biometric_status": "Failed",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "Invalid date of birth vs. registry record",
+    "risk_score": 0.79,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "FAILED",
+        "msg": "National ID Card status: Failed."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "FAILED",
+        "msg": "Liveness check failed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Watchlist evaluation: Critical Match. Conf: 85%."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed due to sanctions or document failure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Rejected: Invalid date of birth vs. registry record."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.85,
+      "watchlist_entity_id": "OFAC-SDN-5273"
+    }
+  },
+  {
+    "applicant_id": "ID-45786",
+    "timestamp": "2026-05-25T18:44:07.148731",
+    "full_name": "Elena Zhang",
+    "country": "Somalia",
+    "document_type": "Residence Permit",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-42600X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Potential Match",
+    "overall_status": "Pending Review",
+    "reason_if_failed": "Secondary Review Required",
+    "risk_score": 0.49,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Residence Permit validated."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "PENDING",
+        "msg": "Proximity match detected. Manual review required."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "PENDING",
+        "msg": "Escalated to compliance officer queue."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "PENDING",
+        "msg": "Pending sign-off."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.74,
+      "watchlist_entity_id": "OFAC-SDN-7883"
+    }
+  },
+  {
+    "applicant_id": "ID-51230",
+    "timestamp": "2026-05-31T18:35:07.148754",
+    "full_name": "Ivan Sharma",
+    "country": "Libya",
+    "document_type": "Residence Permit",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-44823X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Potential Match",
+    "overall_status": "Pending Review",
+    "reason_if_failed": "Secondary Review Required",
+    "risk_score": 0.66,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Residence Permit validated."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "PENDING",
+        "msg": "Proximity match detected. Manual review required."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "PENDING",
+        "msg": "Escalated to compliance officer queue."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "PENDING",
+        "msg": "Pending sign-off."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.71,
+      "watchlist_entity_id": "OFAC-SDN-7625"
+    }
+  },
+  {
+    "applicant_id": "ID-50487",
+    "timestamp": "2026-05-04T01:20:07.148780",
+    "full_name": "Wei Kowalski",
+    "country": "North Korea",
+    "document_type": "Driver Licence",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-88220X",
+    "document_status": "Failed",
+    "biometric_status": "Failed",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "OFAC SDN critical match (\u00e2\u2030\u00a585% confidence)",
+    "risk_score": 0.9,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "FAILED",
+        "msg": "Driver Licence status: Failed."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "FAILED",
+        "msg": "Liveness check failed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Watchlist evaluation: Critical Match. Conf: 89%."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed due to sanctions or document failure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Rejected: OFAC SDN critical match (\u00e2\u2030\u00a585% confidence)."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.89,
+      "watchlist_entity_id": "OFAC-SDN-8777"
+    }
+  },
+  {
+    "applicant_id": "ID-52625",
+    "timestamp": "2026-05-10T23:54:07.148802",
+    "full_name": "James Sharma",
+    "country": "Canada",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-95861X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.19,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.12,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-46308",
+    "timestamp": "2026-05-07T05:30:07.148823",
+    "full_name": "James Sharma",
+    "country": "Norway",
+    "document_type": "Residence Permit",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-91608X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.16,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Residence Permit validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.06,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-45558",
+    "timestamp": "2026-05-31T17:20:07.148843",
+    "full_name": "Aisha Dlamini",
+    "country": "Germany",
+    "document_type": "Residence Permit",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-34138X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.07,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Residence Permit validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.12,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-49864",
+    "timestamp": "2026-05-04T11:46:07.148864",
+    "full_name": "Marcus Nguyen",
+    "country": "France",
+    "document_type": "Driver Licence",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-95123X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.14,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Driver Licence validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.1,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-53241",
+    "timestamp": "2026-05-04T16:36:07.148885",
+    "full_name": "Mohammed Rahman",
+    "country": "United States",
+    "document_type": "National ID Card",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-77728X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Potential Match",
+    "overall_status": "Pending Review",
+    "reason_if_failed": "Secondary Review Required",
+    "risk_score": 0.45,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "National ID Card validated."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "PENDING",
+        "msg": "Proximity match detected. Manual review required."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "PENDING",
+        "msg": "Escalated to compliance officer queue."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "PENDING",
+        "msg": "Pending sign-off."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.55,
+      "watchlist_entity_id": "OFAC-SDN-8042"
+    }
+  },
+  {
+    "applicant_id": "ID-52850",
+    "timestamp": "2026-05-25T04:14:07.148910",
+    "full_name": "James Williams",
+    "country": "Belarus",
+    "document_type": "Driver Licence",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-17755X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "OFAC SDN critical match (\u00e2\u2030\u00a585% confidence)",
+    "risk_score": 0.98,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Driver Licence status: Verified."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Watchlist evaluation: Critical Match. Conf: 89%."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed due to sanctions or document failure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Rejected: OFAC SDN critical match (\u00e2\u2030\u00a585% confidence)."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.89,
+      "watchlist_entity_id": "OFAC-SDN-5274"
+    }
+  },
+  {
+    "applicant_id": "ID-53982",
+    "timestamp": "2026-05-19T11:55:07.148930",
+    "full_name": "Aisha van der Berg",
+    "country": "Switzerland",
+    "document_type": "National ID Card",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-78559X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.18,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "National ID Card validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.08,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-50852",
+    "timestamp": "2026-06-01T08:18:07.148952",
+    "full_name": "Ethan Nguyen",
+    "country": "Germany",
+    "document_type": "Residence Permit",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-10036X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.11,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Residence Permit validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.07,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-47907",
+    "timestamp": "2026-06-01T03:20:07.148974",
+    "full_name": "Sophie Andersen",
+    "country": "United States",
+    "document_type": "Residence Permit",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-22688X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Potential Match",
+    "overall_status": "Pending Review",
+    "reason_if_failed": "Secondary Review Required",
+    "risk_score": 0.55,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Residence Permit validated."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "PENDING",
+        "msg": "Proximity match detected. Manual review required."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "PENDING",
+        "msg": "Escalated to compliance officer queue."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "PENDING",
+        "msg": "Pending sign-off."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.74,
+      "watchlist_entity_id": "OFAC-SDN-5979"
+    }
+  },
+  {
+    "applicant_id": "ID-49254",
+    "timestamp": "2026-06-01T16:04:07.148994",
+    "full_name": "Sophie M\u00c3\u00bcller",
+    "country": "Sweden",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-38082X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.13,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.02,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-46621",
+    "timestamp": "2026-05-06T01:52:07.149016",
+    "full_name": "Sophie O'Brien",
+    "country": "Sweden",
+    "document_type": "Driver Licence",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-63203X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.18,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Driver Licence validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.08,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-50012",
+    "timestamp": "2026-05-24T14:47:07.149037",
+    "full_name": "James Sharma",
+    "country": "Libya",
+    "document_type": "National ID Card",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-81999X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Potential Match",
+    "overall_status": "Pending Review",
+    "reason_if_failed": "Secondary Review Required",
+    "risk_score": 0.46,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "National ID Card validated."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "PENDING",
+        "msg": "Proximity match detected. Manual review required."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "PENDING",
+        "msg": "Escalated to compliance officer queue."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "PENDING",
+        "msg": "Pending sign-off."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.46,
+      "watchlist_entity_id": "OFAC-SDN-7249"
+    }
+  },
+  {
+    "applicant_id": "ID-50761",
+    "timestamp": "2026-05-30T20:00:07.149058",
+    "full_name": "Yuki Johansson",
+    "country": "Singapore",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-49680X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.09,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.08,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-47951",
+    "timestamp": "2026-05-25T22:56:07.149078",
+    "full_name": "Elena Popescu",
+    "country": "Norway",
+    "document_type": "Passport",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-49045X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.03,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Passport validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.11,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-51667",
+    "timestamp": "2026-05-20T11:36:07.149097",
+    "full_name": "Mohammed Ferreira",
+    "country": "Switzerland",
+    "document_type": "Driver Licence",
+    "data_source": "Synthetic DB",
+    "openbanking_uk_consent": "OB-CONSENT-87071X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "No Match",
+    "overall_status": "Approved",
+    "reason_if_failed": "None",
+    "risk_score": 0.15,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake success. Source: Synthetic DB."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Driver Licence validated via OCR and MRZ checksum."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness verification passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "SUCCESS",
+        "msg": "No sanctions list matches. Profile clean."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "SUCCESS",
+        "msg": "All compliance rules satisfied."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "SUCCESS",
+        "msg": "Identity verified. Access granted."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.02,
+      "watchlist_entity_id": null
+    }
+  },
+  {
+    "applicant_id": "ID-47921",
+    "timestamp": "2026-05-24T03:10:07.149117",
+    "full_name": "Priya Williams",
+    "country": "United States",
+    "document_type": "Driver Licence",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-89774X",
+    "document_status": "Verified",
+    "biometric_status": "Verified",
+    "sanctions_match": "Potential Match",
+    "overall_status": "Pending Review",
+    "reason_if_failed": "Secondary Review Required",
+    "risk_score": 0.68,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "SUCCESS",
+        "msg": "Driver Licence validated."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "PENDING",
+        "msg": "Proximity match detected. Manual review required."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "PENDING",
+        "msg": "Escalated to compliance officer queue."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "PENDING",
+        "msg": "Pending sign-off."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": false,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.7,
+      "watchlist_entity_id": "OFAC-SDN-8994"
+    }
+  },
+  {
+    "applicant_id": "ID-52660",
+    "timestamp": "2026-05-04T16:09:07.149143",
+    "full_name": "Marcus Thompson",
+    "country": "Myanmar",
+    "document_type": "National ID Card",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-43509X",
+    "document_status": "Failed",
+    "biometric_status": "Verified",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "Biometric mismatch \u00e2\u20ac\u201d liveness check failed",
+    "risk_score": 0.94,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "FAILED",
+        "msg": "National ID Card status: Failed."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Watchlist evaluation: Critical Match. Conf: 89%."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed due to sanctions or document failure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Rejected: Biometric mismatch \u00e2\u20ac\u201d liveness check failed."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.89,
+      "watchlist_entity_id": "OFAC-SDN-8227"
+    }
+  },
+  {
+    "applicant_id": "ID-52653",
+    "timestamp": "2026-05-05T10:06:07.149169",
+    "full_name": "Charlotte Dlamini",
+    "country": "Russia",
+    "document_type": "National ID Card",
+    "data_source": "OpenBanking UK",
+    "openbanking_uk_consent": "OB-CONSENT-93411X",
+    "document_status": "Failed",
+    "biometric_status": "Verified",
+    "sanctions_match": "Critical Match",
+    "overall_status": "Rejected",
+    "reason_if_failed": "Document tampering detected (MRZ checksum failure)",
+    "risk_score": 0.74,
+    "audit_trail": [
+      {
+        "step": "Onboarding Flow",
+        "status": "SUCCESS",
+        "msg": "Ingestion handshake. Source: OpenBanking UK."
+      },
+      {
+        "step": "Document Check",
+        "status": "FAILED",
+        "msg": "National ID Card status: Failed."
+      },
+      {
+        "step": "Biometric Match",
+        "status": "SUCCESS",
+        "msg": "Liveness check passed."
+      },
+      {
+        "step": "Sanctions Screening",
+        "status": "CRITICAL",
+        "msg": "Watchlist evaluation: Critical Match. Conf: 92%."
+      },
+      {
+        "step": "Decision Logic",
+        "status": "FAILED",
+        "msg": "Fail-closed due to sanctions or document failure."
+      },
+      {
+        "step": "Final Outcome",
+        "status": "FAILED",
+        "msg": "Rejected: Document tampering detected (MRZ checksum failure)."
+      }
+    ],
+    "sanctions_result": {
+      "ofac_sanctions_match": true,
+      "threshold_configured": 0.85,
+      "match_confidence": 0.92,
+      "watchlist_entity_id": "OFAC-SDN-5267"
+    }
+  }
+]
